@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "20d39a69d2245b0fc2c6759efb81fd6ca9cb33070edd5b15a449d82250170118"
+            "sha256": "c779d20b7ffe375bbe2b4662c5d53b06c8936af5c5295fb4c573bc4c0f113a96"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,6 +30,14 @@
             ],
             "index": "pypi",
             "version": "==3.0.2"
+        },
+        "django-extensions": {
+            "hashes": [
+                "sha256:4524eca892d23fa6e93b0620901983b287ff5dc806f1b978d6a98541f06b9471",
+                "sha256:936e8e3962024d3c75ea54f4e0248002404ca7ca7fb698430e60b06b5555b4e7"
+            ],
+            "index": "pypi",
+            "version": "==2.2.6"
         },
         "psycopg2-binary": {
             "hashes": [
@@ -75,6 +83,13 @@
                 "sha256:b02c06db6cf09c12dd25137e563b31700d3b80fcc4ad23abb7a315f2789819be"
             ],
             "version": "==2019.3"
+        },
+        "six": {
+            "hashes": [
+                "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a",
+                "sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"
+            ],
+            "version": "==1.14.0"
         },
         "sqlparse": {
             "hashes": [

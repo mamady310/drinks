@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Drink
+
+def drink_list(request):
+    drinks = Drink.objects.all()
+    return render(request, 'drinks_app/drink_list.html', {'drinks': drinks})
