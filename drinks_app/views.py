@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Drink
+from .models import Drink, Recipe, Comment
 
 def drink_list(request):
     drinks = Drink.objects.all()
