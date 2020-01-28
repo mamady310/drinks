@@ -9,4 +9,6 @@ def drink_list(request):
 def recipe_list(request):
     recipes = Recipe.objects.all()
     return render(request, 'drinks_app/recipe_list.html', {'recipes': recipes})    
+
+    
                                                                                                                                                                                                                                  
