@@ -10,7 +10,7 @@ class Drink(models.Model):
 
 class Recipe(models.Model):
     spirit = models.ForeignKey(Drink,  on_delete=models.CASCADE, related_name='drinks') 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, null=True)
     recipe = models.TextField() 
     photo_url = models.TextField(null=True)  
  
