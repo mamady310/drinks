@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Drink
+from .models import Drink, Recipe
 
 class DrinkSerializer(serializers.HyperlinkedModelSerializer):
     # spirit = serializers.HyperlinkedRelatedField(
@@ -10,3 +10,9 @@ class DrinkSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Drink
         fields = ('id', 'photo_url', 'description', 'spirit',)
+
+class RecipeSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta: 
+        model = Recipe        
+        fields = ('id','photo_url', 'recipe', 'name',)

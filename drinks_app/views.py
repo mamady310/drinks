@@ -1,17 +1,27 @@
 from django.shortcuts import render
 from .serializers import DrinkSerializer
-from .models import Drink
+from .models import Drink,Recipe
 from rest_framework import generics 
 
 class DrinkList(generics.ListCreateAPIView):
     queryset = Drink.objects.all()
     serializer_class = DrinkSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    # permission_classes = (permissions.IsAuthenticated,)
 
 class DrinkDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Drink.objects.all()
     serializer_class = DrinkSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    # permission_classes = (permissions.IsAuthenticated,)
+
+class RecipeList(generics.ListCreateAPIView):
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+
+class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+
+
 
 
 # from .models import Drink, Recipe, Comment
