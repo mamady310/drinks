@@ -1,14 +1,28 @@
 from django.shortcuts import render
+from .serializers import DrinkSerializer
+from .models import Drink
+from rest_framework import generics 
 
-from .models import Drink, Recipe, Comment
+class DrinkList(generics.ListCreateAPIView):
+    queryset = Drink.objects.all()
+    serializer_class = DrinkSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
-def drink_list(request):
-    drinks = Drink.objects.all()
-    return render(request, 'drinks_app/drink_list.html', {'drinks': drinks})
+class DrinkDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Drink.objects.all()
+    serializer_class = DrinkSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
-def recipe_list(request):
-    recipes = Recipe.objects.all()
-    return render(request, 'drinks_app/recipe_list.html', {'recipes': recipes})    
+
+# from .models import Drink, Recipe, Comment
+
+# def drink_list(request):
+#     drinks = Drink.objects.all()
+#     return render(request, 'drinks_app/drink_list.html', {'drinks': drinks})
+
+# def recipe_list(request):
+#     recipes = Recipe.objects.all()
+#     return render(request, 'drinks_app/recipe_list.html', {'recipes': recipes})    
 
     
                                                                                                                                                                                                                                  
