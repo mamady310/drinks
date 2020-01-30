@@ -1,18 +1,26 @@
 from rest_framework import serializers
-from .models import Drink, Recipe
+from .models import Drink
+from .models import Recipe
 
 class DrinkSerializer(serializers.HyperlinkedModelSerializer):
-    # spirit = serializers.HyperlinkedRelatedField(
-    #     view_name='song_detail',
-    #     many=True,
-    #     read_only=True
+    # drink = serializers.HyperlinkedRelatedField(
+    # recipe = serializers.HyperlinkedRelatedField(
+        # view_name='recipe_detail',
+        # many=True,
+        # read_only=True,
     # )
     class Meta:
         model = Drink
         fields = ('id', 'photo_url', 'description', 'spirit',)
 
-class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 
-    class Meta: 
+class RecipeSerializer(serializers.HyperlinkedModelSerializer):
+    spirit = serializers.HyperlinkedRelatedField(
+        view_name='recipe_detail',
+        # many=True,
+        read_only=True,
+    )
+
+    class Meta:
         model = Recipe        
-        fields = ('id','photo_url', 'recipe', 'name',)
+        fields = ('id','photo_url', 'recipe', 'name','spirit',)

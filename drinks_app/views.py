@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .serializers import DrinkSerializer
-from .models import Drink,Recipe
+from .serializers import DrinkSerializer, RecipeSerializer 
+from .models import Drink
+from .models import Recipe
 from rest_framework import generics 
 
 class DrinkList(generics.ListCreateAPIView):
@@ -16,12 +17,11 @@ class DrinkDetail(generics.RetrieveUpdateDestroyAPIView):
 class RecipeList(generics.ListCreateAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
+    # permission_classes = (permissions.IsAuthenticated,)
 
 class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-
-
 
 
 # from .models import Drink, Recipe, Comment
