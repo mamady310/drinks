@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'drinks_app',
     'django_extensions',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
