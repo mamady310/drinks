@@ -25,12 +25,15 @@ SECRET_KEY = '6mrwvv3)ndrdy2=7orek1u7#cp19ar@d8i#tk__$)g=u6rmoej'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+   'CORS_ORIGIN_ALLOW_ALL', 
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,11 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drinks_app',
     'django_extensions',
-    'rest_framework',
-    'corsheaders',
+    'rest_framework',  
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
